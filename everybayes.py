@@ -107,21 +107,3 @@ if __name__ == "__main__":
 	main()
 
 
-test_words = load_test_words('../all.txt')
-m = build_model()
-print m.labels()
-print m.most_informative_features()
-print m.classify(file_bag('../test/fruit/peach'))
-print m.classify(file_bag('../test/music/neil_young'))
-print m.classify(file_bag('../test/music/sviib'))
-print m.classify(file_bag('../test/fruit/grape'))
-print m.classify(file_bag('../test/buildings/tokyo_tower'))
-print m.classify(file_bag('../test/buildings/parthenon'))
-print (file_bag('../test/buildings/parthenon') == file_bag('../test/buildings/tokyo_tower')) 
-
-	
-
-
-
-
-
