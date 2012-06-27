@@ -1,0 +1,82 @@
+
+                           _                           
+  _____   _____ _ __ _   _| |__   __ _ _   _  ___  ___ 
+ / _ \ \ / / _ \ '__| | | | '_ \ / _` | | | |/ _ \/ __|
+|  __/\ V /  __/ |  | |_| | |_) | (_| | |_| |  __/\__ \
+ \___| \_/ \___|_|   \__, |_.__/ \__,_|\__, |\___||___/
+                     |___/             |___/           
+========================================================
+
+everybayes: because everyone should be able to be naive.
+
+# OVERVIEW
+
+everybayes is Naive Bayes Classifier for document classification. It basic word prescence-abscence features to pick a document's category based on examples. 
+
+# HOW TO USE
+
+## REQUIREMENTS
+
+everybayes requires:
+
+python (tested with 2.7.3)
+nltk
+
+Additionally you need the nltk English stop word list. You can get this by opening a python console and typing:
+
+ import ntlk
+ nltk.download('stopwords')
+
+That should do it. 
+
+## FEATURE LIST
+
+First you need to know what words to check for. The easy way to do this is to concatenate all your examples into one file called "features" in the directory you run everybayes from. You can also specify the path to a file like this with -f [filename]. 
+
+## LEARNING THE DATA
+
+Before everybayes can figure out what category things belong to, it needs some examples to learn from. Put all documents of a given category in a directory with the category name, and then put all those directories in another directory. Your hierarchy should look like this:
+
+parent
+- cat1
+-- file1
+-- file2
+-- file3
+- cat2
+-- file1
+-- etc.
+
+By calling everybayes with the -t flag and the path of the parent directory it will build and save a model so it can classify documents. The default model location is "model.pickle" in the current directory; you can change this with the -m option. 
+
+The names of directories containing documents are used as the category names. 
+
+## CLASSIFYING
+
+To classify data, just pass the name of each file you want classified as a command-line argument. If you've saved the model somewhere besides the default location, you'll need to specify that using -m. 
+
+For each input file, everybayes will print a line of the format [filename]:[classification]. 
+
+# SAMPLE DATA
+
+To get you started, use the sample data provided in the corpus directory. The "train" directory represents data we have beforehand, while "test" is new documents that come in that we want classified. First, build the feature list with the training data.
+
+$ cat corpus/train/*/* > features
+
+Next, learn the model.
+
+$ python everybayes.py -t corpus/train
+
+Finally, try it on the test documents.
+
+$ python everybayes.py -c corpus/test/*
+
+How'd it do?
+
+The test documents are randomly selected Wikipedia articles taken a little before Wed, 27 Jun 2012 23:43:14 +0900. 
+
+# ABOUT
+
+everybayes is by Paul McCann <polm@dampfkraft.com>. The name is from Buffalo Springfield's song Everydays for no particular reason. The Wikipedia article categories were chosen in a hurry while listening to the Talking Heads. 
+
+To the extent permitted by law, I place this in the public domain. 
+
