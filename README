@@ -12,7 +12,7 @@ everybayes: because everyone should be able to be naive.
 
 # Overview
 
-everybayes is a frontend to the NLTK Naive Bayes Classifier for document classification. It uses basic word prescence-abscence features to pick a document's category based on examples. 
+everybayes is a frontend to the NLTK Naive Bayes Classifier for document classification. It uses basic word presence-absence features to pick a document's category based on examples. 
 
 # How to Use
 
