@@ -11,7 +11,7 @@ everybayes: because everyone should be able to be naive.
 
 # OVERVIEW
 
-everybayes is Naive Bayes Classifier for document classification. It basic word prescence-abscence features to pick a document's category based on examples. 
+everybayes is a frontend to the NLTK Naive Bayes Classifier for document classification. It uses basic word prescence-abscence features to pick a document's category based on examples. 
 
 # HOW TO USE
 
@@ -19,8 +19,8 @@ everybayes is Naive Bayes Classifier for document classification. It basic word 
 
 everybayes requires:
 
-python (tested with 2.7.3)
-nltk
+- python (tested with 2.7.3)
+- nltk
 
 Additionally you need the nltk English stop word list. You can get this by opening a python console and typing:
 
