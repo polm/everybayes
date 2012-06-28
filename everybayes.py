@@ -2,7 +2,6 @@ from nltk import *
 from nltk.corpus import stopwords
 import sys, os, re, string, argparse, pickle
 
-
 def sanitize(text):
 	"""Clean the provided text.
 	
@@ -85,9 +84,6 @@ def main():
 	parser.add_argument('-f','--features',required=False,nargs=1,dest='feature_list',default='features',help="The words to look for.")
 
 	args = parser.parse_args()
-
-
-	
 
 	global test_words
 	test_words = load_test_words(args.feature_list)
